@@ -57,6 +57,6 @@ public class GatoService implements IGatoService{
 	}
 
 	private Gato getDaoById(int id) {
-		return Optional.of(gatoDao.get(id)).get();
+		return Optional.ofNullable(gatoDao.get(id)).orElse(new Gato());
 	}
 }
